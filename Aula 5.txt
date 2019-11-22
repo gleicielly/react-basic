@@ -1,0 +1,34 @@
+Aula 5
+
+componentes: são elementos de interface, inputs e button, aprencia e comportamento proprios
+
+Criação de componentes com react
+
+todas as variaveis que controlam algo interno do componete é chamada de estado, e o estado fica dentro de um objeto do componente chamado state.
+
+O que são Componentes?
+
+Elementos de interface com aparência e comportamento próprios que podem ser reutilizados
+
+
+Criação de Componentes
+
+Crie uma classe estendendo a classe Component do React.
+
+import React, {Component} from 'react';
+class MyDiv extends Component{
+    render(){
+        return(<div>TreinaWeb</div>);
+    }
+}
+export default MyDiv;
+
+Propriedades
+
+Propriedades são valores que passamos para um componente e ficam dentro do objeto "props". O componente não pode modificá-las.
+
+Estado
+
+Estado indica as variáveis internas do componente, as quais podem ser modificadas. Essas variáveis ficam dentro do objeto "state" e são modificadas pela função "setState()".
+
+Para se aprofundar na criação de componentes, veja nosso curso "React: Dominando Componentes".

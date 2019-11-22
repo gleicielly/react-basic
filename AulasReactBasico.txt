@@ -1,1 +1,219 @@
 Registros das aulas de react
+
+- O React é uma biblioteca desenvolvida pelo time do Facebook com o intuito de se aplicar o conceito de componentização durante o desenvolvimento de uma aplicação web
+
+- isso quer dizer que, com o auxílio do React e do JavaScript, você poderá desenvolver componentes reutilizáveis na interface de sua aplicação web
+
+- O próprio Facebook define o React como sendo "uma biblioteca declarativa, eficiente e flexível baseada em JavaScript para construção de interfaces
+
+- o React se baseia na ideia de criarmos componentes que podem ser reutilizados em toda a aplicação e até em outras aplicações
+
+- React Native. desenvolver aplicações nativas para dispositivos móveis
+
+https://jsfiddle.net/
+
+- O React é uma biblioteca criada pelo Facebook para se criar interfaces de usuário baseadas em componentes.
+
+- O React usa uma cópia do DOM em memória (Virtual DOM) para fazer modificações, acessando o DOM o menor número de vezes possível.
+
+- Podemos criar elementos com "React.createElement()", onde passamos o nome do elemento, um objeto com propriedades e o conteúdo do elemento.
+React.createElement('h1', {id: "meuTitulo"}, "Hello World!"),
+
+- Iniciamos o React executando "ReactDOM.render()", passando primeiro um elemento a ser renderizado e um elemento onde iremos inserir tal elemento.
+ReactDOM.render(
+    React.createElement('h1', {id: "meuTitulo"}, "Hello World!"),
+    document.querySelector("#minhaDiv")
+
+- exemplo basico
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			ReactDOM.render(
+					React.createElement('h3', null, 
+						React.createElement('span', null, 'Hello World!')
+						),
+					minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			const myTitle = 'TreinaWeb';
+			const lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+			let isOpen = true;
+
+			ReactDOM.render(
+					React.createElement('div', null, 
+						React.createElement('ul', null, 
+							lista.map(item => React.createElement('li', null, item.valor) )
+							)
+						),
+					minhaDiv
+				)
+
+			ReactDOM.render(
+				<button>
+					<ul>
+						{
+							lista.map(item => <li>{item.valor}</li>)
+						}					
+					</ul>
+				</button>,
+				minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			const myTitle = 'TreinaWeb';
+			const lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+			let isOpen = true;
+
+			ReactDOM.render(
+					React.createElement('button', null, (isOpen ? 'Fechar' : 'Abrir') ),
+					minhaDiv
+				);
+
+			ReactDOM.render(
+				<button>
+					{
+						isOpen ? 'Fechar' : 'Abrir'
+					}
+				{/*comentário*/}
+				</button>,
+				minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			const myTitle = 'TreinaWeb';
+			const lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+			let isOpen = true;
+
+			ReactDOM.render(
+					React.createElement('div', null, 
+						React.createElement('ul', null, 
+							lista.map(item => React.createElement('li', null, item.valor) )
+							)
+						),
+					minhaDiv
+				)
+
+			ReactDOM.render(
+				<button>
+					<ul>
+						{
+							lista.map(item => <li>{item.valor}</li>)
+						}					
+					</ul>
+				</button>,
+				minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			const myTitle = 'TreinaWeb';
+			const lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+			let isOpen = true;
+			let myStyle = {fontSize: '12px', marginTop: '1em'};
+			function abc(){
+				return 3;
+			}
+
+			ReactDOM.render(
+					React.createElement('button', null, (isOpen ? 'Fechar' : 'Abrir') ),
+					minhaDiv
+				);
+
+			ReactDOM.render(
+				<button style={myStyle} onClick={abc} >
+					{
+						isOpen ? 'Fechar' : 'Abrir'
+					}
+				{/*comentário*/}
+				</button>,
+				minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
+- O JSX nos permite escrever algo como HTML (ou XML) no meio do nosso código JavaScript, que após transpilado produz elementos do React.
+
+- Outros pontos que não podemos esquecer:
+
+    A palavra "class" e "for" são reservadas no JavaScript. Para se criar uma classe, em sua tag utilize a palavra "className", e para "for", "htmlFor".
+    Style deve ser um objeto e o nome dos atributos, ao invés de serem separados por traço, devem estar em camelCase:
+
+var meuEstilo = {"fontSize": "15px", "marginTop": "1em"};
+<span style={meuEstilo} ></span>

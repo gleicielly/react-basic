@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			const myTitle = 'TreinaWeb';
+			const lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+			let isOpen = true;
+
+			ReactDOM.render(
+					React.createElement('div', null, 
+						React.createElement('ul', null, 
+							lista.map(item => React.createElement('li', null, item.valor) )
+							)
+						),
+					minhaDiv
+				)
+
+			ReactDOM.render(
+				<button>
+					<ul>
+						{
+							lista.map(item => <li>{item.valor}</li>)
+						}					
+					</ul>
+				</button>,
+				minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>
+			const minhaDiv = document.querySelector('#app');
+			const myTitle = 'TreinaWeb';
+			const lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+			let isOpen = true;					
+
+			ReactDOM.render(
+				<button>
+					{
+						isOpen ? 'Fechar' : 'Abrir'
+					}
+				{/*comentário*/}
+				</button>,
+				minhaDiv
+				)
+		</script>
+	</body>
+</html>
+
